@@ -23,7 +23,7 @@ class Tapir < Formula
 
   # version suffix
   def ver
-    "1.0"
+    "5.0"
   end
 
   # http://releases.llvm.org/5.0.0/docs/CMake.html
