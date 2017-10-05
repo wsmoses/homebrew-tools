@@ -89,7 +89,7 @@ class Tapir < Formula
 
     # These versioned .dylib symlinks are missing for some reason
     # Note that we use relative symlinks
-    ln_s "libLLVM.dylib", install_prefix/"lib/libLLVM-5.0.dylib"
+    #ln_s "libLLVM.dylib", install_prefix/"lib/libLLVM-5.0.dylib"
 
     # Set LC_LOAD_DYLIB entries to absolute paths
     system "install_name_tool", "-change", "@rpath/libLLVM.dylib", install_prefix/"lib/libLLVM.dylib", install_prefix/"lib/libLTO.dylib"
