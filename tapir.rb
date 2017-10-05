@@ -5,14 +5,22 @@ class Tapir < Formula
   stable do
     url "http://cilk.mit.edu/tapir-1.0-1_src.tar.gz"
     sha256 "20c3e220866789f7d9d12b94a343ed16e6e930f870b89a5d3fcdf69c467d1c3f"
+
+    resource "libcxx" do
+      url "http://releases.llvm.org/5.0.0/libcxx-5.0.0.src.tar.xz"
+      sha256 "eae5981e9a21ef0decfcac80a1af584ddb064a32805f95a57c7c83a5eb28c9b1"
+    end
   end
 
   head do
     url "http://github.com/wsmoses/Parallel-IR"
+
+    resource "libcxx" do
+      url "http://llvm.org/git/libcxx.git", :branch => "release_50"
+    end
   end
 
   depends_on "libffi"
-  depends_on "glibc"
   depends_on "cmake" => :build
 
   # requires gcc >= 4.8
@@ -40,7 +48,7 @@ class Tapir < Formula
     ENV.permit_arch_flags
 
     clang_buildpath  = buildpath/"tools/clang"
-    #libcxx_buildpath = buildpath/"projects/libcxx"
+    libcxx_buildpath = buildpath/"projects/libcxx"
 
     #clang_buildpath.install resource("clang")
     #libcxx_buildpath.install resource("libcxx")
@@ -48,7 +56,7 @@ class Tapir < Formula
     #(buildpath/"tools/polly").install resource("polly")
     #(buildpath/"tools/clang/tools/extra").install resource("clang-tools-extra")
     #(buildpath/"projects/openmp").install resource("openmp")
-    #(buildpath/"projects/libcxx").install resource("libcxx")
+    (buildpath/"projects/libcxx").install resource("libcxx")
     #(buildpath/"projects/libunwind").install resource("libunwind")
     #(buildpath/"projects/compiler-rt").install resource("compiler-rt")
 
