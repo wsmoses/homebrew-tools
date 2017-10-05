@@ -38,7 +38,7 @@ class Tapir < Formula
     # almost be treated as an entirely different build from LLVM.
     ENV.permit_arch_flags
 
-    #clang_buildpath  = buildpath/"tools/clang"
+    clang_buildpath  = buildpath/"tools/clang"
     #libcxx_buildpath = buildpath/"projects/libcxx"
 
     #clang_buildpath.install resource("clang")
