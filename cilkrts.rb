@@ -29,6 +29,8 @@ class Cilkrts < Formula
 
     args = %W[
       -DCMAKE_INSTALL_PREFIX=#{install_prefix}
+      -DCMAKE_C_COMPILER=clang-5.0
+      -DCMAKE_CXX_COMPILER=clang++-5.0 
     ]
 
     mktemp do
