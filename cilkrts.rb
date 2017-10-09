@@ -3,8 +3,12 @@ class Cilkrts < Formula
   homepage "http://cilk.mit.edu"
 
   stable do
-    url "https://www.cilkplus.org/sites/default/files/runtime_source/cilkplus-rtl-004467.tgz"
-    sha256 "e3cc83e42afe34c03da7938b79cdebc3b7f3237d3734a4d45c9ad91d7abe475e"
+    url "http://cilk.mit.edu/cilkrts.tgz"
+    sha256 "59ff2d7ec817e8d8758c1866b37d752e83cf40228db4489a83ed799ca927e464"
+  end
+
+  head do
+    url "http://github.com/CilkHub/cilkrts"
   end
 
   depends_on "libffi"
@@ -31,7 +35,7 @@ class Cilkrts < Formula
       -DCMAKE_INSTALL_PREFIX=#{install_prefix}
       -DCMAKE_C_COMPILER=clang-5.0
       -DCMAKE_CXX_COMPILER=clang++-5.0
-      -DCMAKE_CXX_FLAGS="-stdlib=libc++\ -nostdinc++\ -I/usr/local/opt/tapir/lib/llvm-5.0/include/c++/v1"
+      -DCMAKE_CXX_FLAGS="-I/usr/local/opt/tapir/lib/llvm-5.0/include/c++/v1"
       -DCMAKE_LD_FLAGS="-L/usr/local/opt/tapir/lib/llvm-5.0/lib"
     ]
 
