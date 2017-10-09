@@ -3,8 +3,8 @@ class Tapir < Formula
   homepage "http://github.com/wsmoses/Parallel-IR"
 
   stable do
-    url "http://cilk.mit.edu/tapir-1.0-1_src.tar.gz"
-    sha256 "20c3e220866789f7d9d12b94a343ed16e6e930f870b89a5d3fcdf69c467d1c3f"
+    url "http://cilk.mit.edu/tapir-1.0-2_src.tar.gz"
+    sha256 "59ff2d7ec817e8d8758c1866b37d752e83cf40228db4489a83ed799ca927e464"
 
     resource "libcxx" do
       url "http://releases.llvm.org/5.0.0/libcxx-5.0.0.src.tar.xz"

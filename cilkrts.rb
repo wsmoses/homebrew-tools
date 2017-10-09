@@ -1,6 +1,6 @@
 class Cilkrts < Formula
-  desc "Cilkrts compiler"
-  homepage "http://github.com/wsmoses/Parallel-IR"
+  desc "Cilk runtime system"
+  homepage "http://cilk.mit.edu"
 
   stable do
     url "https://www.cilkplus.org/sites/default/files/runtime_source/cilkplus-rtl-004467.tgz"
