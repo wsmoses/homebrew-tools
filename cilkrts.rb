@@ -30,8 +30,8 @@ class Cilkrts < Formula
     args = %W[
       -DCMAKE_INSTALL_PREFIX=#{install_prefix}
       -DCMAKE_C_COMPILER=clang-5.0
-      -DCMAKE_CXX_COMPILER="clang++-5.0\ -stdlib=libc++"
-      -DCMAKE_CXX_FLAGS="-nostdinc++\ -I/usr/local/opt/tapir/lib/llvm-5.0/include/c++/v1"
+      -DCMAKE_CXX_COMPILER=clang++-5.0
+      -DCMAKE_CXX_FLAGS="-stdlib=libc++\ -nostdinc++\ -I/usr/local/opt/tapir/lib/llvm-5.0/include/c++/v1"
       -DCMAKE_LD_FLAGS="-L/usr/local/opt/tapir/lib/llvm-5.0/lib"
     ]
 
