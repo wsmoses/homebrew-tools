@@ -5,7 +5,7 @@ class Cilkrts < Formula
 
   stable do
     url "http://cilk.mit.edu/cilkrts.tgz"
-    sha256 "a5e31c24f09f5cc0e41e231a92bdc4708eee30a558e3e1a67c3f45131b42221b"
+    sha256 "d4341b0ae9c955cc680d41d5ac2fd02131169726d8aa9fee6ce2368811a79b9c"
   end
 
   head do
