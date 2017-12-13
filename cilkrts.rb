@@ -23,6 +23,10 @@ class Cilkrts < Formula
     fails_with :gcc => n
   end
 
+  def ver
+    return "1.0"
+  end
+
   def install
 
     install_prefix = lib/"cilkrts-#{ver}"
