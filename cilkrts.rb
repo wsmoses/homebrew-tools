@@ -1,6 +1,7 @@
 class Cilkrts < Formula
   desc "Cilk runtime system"
   homepage "http://cilk.mit.edu"
+  version "1.0"
 
   url "http://cilk.mit.edu/cilkrts.tgz"
   sha256 "1"
@@ -14,11 +15,6 @@ class Cilkrts < Formula
   fails_with :gcc
   ("4.3".."4.7").each do |n|
     fails_with :gcc => n
-  end
-
-  # version suffix
-  def ver
-    "1.1"
   end
 
   def install

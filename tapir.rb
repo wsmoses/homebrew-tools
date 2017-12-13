@@ -31,7 +31,7 @@ class Tapir < Formula
   end
 
   # version suffix
-  def ver
+  def version
     "5.0"
   end
 
