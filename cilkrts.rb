@@ -9,7 +9,7 @@ class Cilkrts < Formula
   end
 
   head do
-    url "http://github.com/CilkHub/cilkrts"
+    url "http://github.com/CilkHub/cilkrts.git"
   end
 
   depends_on "libffi"
