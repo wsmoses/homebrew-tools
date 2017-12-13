@@ -1,6 +1,7 @@
 class Tapir < Formula
   desc "Tapir compiler"
   homepage "http://github.com/wsmoses/Parallel-IR"
+  version "1.0-2"
 
   stable do
     url "http://cilk.mit.edu/tapir-1.0-2_src.tar.gz"
@@ -31,7 +32,7 @@ class Tapir < Formula
   end
 
   # version suffix
-  def version
+  def ver
     "5.0"
   end
 

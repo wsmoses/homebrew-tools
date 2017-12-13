@@ -1,10 +1,16 @@
 class Cilkrts < Formula
   desc "Cilk runtime system"
   homepage "http://cilk.mit.edu"
-  version "1.0"
+  version "1.0-1"
 
-  url "http://cilk.mit.edu/cilkrts.tgz"
-  sha256 "1"
+  stable do
+    url "http://cilk.mit.edu/cilkrts.tgz"
+    sha256 "a5e31c24f09f5cc0e41e231a92bdc4708eee30a558e3e1a67c3f45131b42221b"
+  end
+
+  head do
+    url "http://github.com/CilkHub/cilkrts"
+  end
 
   depends_on "libffi"
   depends_on "tapir"
