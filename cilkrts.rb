@@ -2,15 +2,8 @@ class Cilkrts < Formula
   desc "Cilk runtime system"
   homepage "http://cilk.mit.edu"
 
-  stable do
-    url "http://cilk.mit.edu/cilkrts.tgz"
-    sha256 "59ff2d7ec817e8d8758c1866b37d752e83cf40228db4489a83ed799ca927e464"
-  end
-
-  head do
-    url "http://github.com/CilkHub/cilkrts"
-  end
-
+  url "http://cilk.mit.edu/cilkrts.tgz"
+  sha256 "1"
 
   depends_on "libffi"
   depends_on "tapir"
@@ -25,7 +18,7 @@ class Cilkrts < Formula
 
   # version suffix
   def ver
-    "1.0"
+    "1.1"
   end
 
   def install
