@@ -14,7 +14,7 @@ class Tapir < Formula
   end
 
   head do
-    url "http://github.com/wsmoses/Parallel-IR"
+    url "http://github.com/wsmoses/Parallel-IR.git"
 
     resource "libcxx" do
       url "http://llvm.org/git/libcxx.git", :branch => "release_50"
