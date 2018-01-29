@@ -22,6 +22,7 @@ class Tapir < Formula
   end
 
   depends_on "libffi"
+  depends_on "snappy"
   depends_on "cmake" => :build
 
   # requires gcc >= 4.8
