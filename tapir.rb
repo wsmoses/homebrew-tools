@@ -1,6 +1,6 @@
 class Tapir < Formula
   desc "Tapir compiler"
-  homepage "http://github.com/wsmoses/Parallel-IR"
+  homepage "http://github.com/wsmoses/Tapir-LLVM"
   version "1.0-2"
 
   stable do
@@ -14,7 +14,7 @@ class Tapir < Formula
   end
 
   head do
-    url "http://github.com/wsmoses/Parallel-IR.git"
+    url "http://github.com/wsmoses/Tapir-LLVM.git"
 
     resource "libcxx" do
       url "http://llvm.org/git/libcxx.git", :branch => "release_50"
