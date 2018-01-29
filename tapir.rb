@@ -77,6 +77,7 @@ class Tapir < Formula
       -DLLVM_ENABLE_FFI=ON
       -DFFI_INCLUDE_DIR=#{Formula["libffi"].opt_lib}/libffi-#{Formula["libffi"].version}/include
       -DFFI_LIBRARY_DIR=#{Formula["libffi"].opt_lib}
+      -DLLVM_PARALLEL_LINK_JOBS=1
     ]
 
     mktemp do
