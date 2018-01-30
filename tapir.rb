@@ -5,16 +5,8 @@ class Tapir < Formula
   head do
     url "http://github.com/wsmoses/Tapir-LLVM.git"
 
-    resource "clang" do
-      url "http://github.com/wsmoses/Tapir-Clang.git"
-    end
-
     resource "clang-extra-tools" do
       url "https://llvm.org/git/clang-tools-extra.git", :branch => "release_50"
-    end
-
-    resource "compiler-rt" do
-      url "http://github.com/wsmoses/Tapir-Compiler-RT.git"
     end
 
     resource "libcxx" do
@@ -32,19 +24,10 @@ class Tapir < Formula
     resource "lldb" do
       url "https://llvm.org/git/lldb.git", :branch => "release_50"
     end
-
-    resource "openmp" do
-      url "https://llvm.org/git/openmp.git", :branch => "release_50"
-    end
-
-    resource "polly" do
-      url "http://github.com/wsmoses/Tapir-Polly.git"
-    end
   end
 
   keg_only :provided_by_macos
 
-  option "without-compiler-rt", "Do not build Clang runtime support libraries for code sanitizers, builtins, and profiling"
   option "without-libcxx", "Do not build libc++ standard library"
   option "with-toolchain", "Build with Toolchain to facilitate overriding system compiler"
   option "with-lldb", "Build LLDB debugger"
@@ -96,13 +79,10 @@ class Tapir < Formula
       ENV.prepend_path "PATH", Formula["python"].opt_libexec/"bin"
     end
 
-    (buildpath/"tools/clang").install resource("clang")
     (buildpath/"tools/clang/tools/extra").install resource("clang-extra-tools")
-    (buildpath/"projects/openmp").install resource("openmp")
     (buildpath/"projects/libcxx").install resource("libcxx") if build_libcxx?
     (buildpath/"projects/libunwind").install resource("libunwind")
     (buildpath/"tools/lld").install resource("lld")
-    (buildpath/"tools/polly").install resource("polly")
 
     if build.with? "lldb"
       if build.with? "python"
@@ -124,16 +104,7 @@ class Tapir < Formula
       system "security", "list-keychains", "-d", "user", "-s", "/Users/#{username}/Library/Keychains/login.keychain"
     end
 
-    if build.with? "compiler-rt"
-      (buildpath/"projects/compiler-rt").install resource("compiler-rt")
-
-      # compiler-rt has some iOS simulator features that require i386 symbols
-      # I'm assuming the rest of clang needs support too for 32-bit compilation
-      # to work correctly, but if not, perhaps universal binaries could be
-      # limited to compiler-rt. llvm makes this somewhat easier because compiler-rt
-      # can almost be treated as an entirely different build from llvm.
-      ENV.permit_arch_flags
-    end
+    ENV.permit_arch_flags
 
     args = %w[
       -DLLVM_OPTIMIZED_TABLEGEN=ON
@@ -146,7 +117,6 @@ class Tapir < Formula
       -DLLVM_TARGETS_TO_BUILD=all
     ]
     args << "-DLIBOMP_ARCH=x86_64"
-    args << "-DLLVM_BUILD_EXTERNAL_COMPILER_RT=ON" if build.with? "compiler-rt"
     args << "-DLLVM_CREATE_XCODE_TOOLCHAIN=ON" if build.with? "toolchain"
 
     if build.with? "shared-libs"
