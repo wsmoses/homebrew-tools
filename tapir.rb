@@ -114,17 +114,11 @@ class Tapir < Formula
       -DLLVM_INSTALL_UTILS=ON
       -DWITH_POLLY=ON
       -DLINK_POLLY_INTO_TOOLS=ON
-      -DLLVM_TARGETS_TO_BUILD=all
+      -DLLVM_BUILD_LLVM_DYLIB=ON
+      -DLIBOMP_ENABLE_SHARED=ON
     ]
     args << "-DLIBOMP_ARCH=x86_64"
     args << "-DLLVM_CREATE_XCODE_TOOLCHAIN=ON" if build.with? "toolchain"
-
-    if build.with? "shared-libs"
-      args << "-DBUILD_SHARED_LIBS=ON"
-      args << "-DLIBOMP_ENABLE_SHARED=ON"
-    else
-      args << "-DLLVM_BUILD_LLVM_DYLIB=ON"
-    end
 
     args << "-DLLVM_ENABLE_LIBCXX=ON" if build_libcxx?
 
