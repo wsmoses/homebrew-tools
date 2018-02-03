@@ -118,6 +118,7 @@ class Tapir < Formula
       -DLIBOMP_ENABLE_SHARED=ON
       -DLLVM_ENABLE_ASSERTIONS=ON
       -DCMAKE_BUILD_TYPE=Release
+      -DLLVM_PARALLEL_LINK_JOBS=2
     ]
     args << "-DLIBOMP_ARCH=x86_64"
     args << "-DLLVM_CREATE_XCODE_TOOLCHAIN=ON" if build.with? "toolchain"
