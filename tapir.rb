@@ -118,8 +118,6 @@ class Tapir < Formula
       -DLIBOMP_ENABLE_SHARED=ON
       -DLLVM_ENABLE_ASSERTIONS=ON
       -DCMAKE_BUILD_TYPE=Release
-      -DLLVM_PARALLEL_COMPILE_JOBS=4
-      -DLLVM_PARALLEL_LINK_JOBS=1
       -DLLVM_TARGETS_TO_BUILD=host
     ]
     args << "-DLIBOMP_ARCH=x86_64"
@@ -153,7 +151,7 @@ class Tapir < Formula
       else
         system "cmake", "-G", "Unix Makefiles", buildpath, *(std_cmake_args + args)
       end
-      system "make"
+      system "make", "-j4"
       system "make", "install"
       system "make", "install-xcode-toolchain" if build.with? "toolchain"
     end
