@@ -151,7 +151,7 @@ class Tapir < Formula
       else
         system "cmake", "-G", "Unix Makefiles", buildpath, *(std_cmake_args + args)
       end
-      system "make", "-j4"
+      system "make", "-j2"
       system "make", "install"
       system "make", "install-xcode-toolchain" if build.with? "toolchain"
     end
