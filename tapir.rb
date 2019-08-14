@@ -5,24 +5,40 @@ class Tapir < Formula
   head do
     url "http://github.com/wsmoses/Tapir-LLVM.git"
 
-    resource "clang-extra-tools" do
-      url "https://llvm.org/git/clang-tools-extra.git", :branch => "release_50"
+    resource "clang" do
+      url "https://github.com/wsmoses/Tapir-Clang"
+    end
+    
+    resource "compiler-rt" do
+      url "https://github.com/wsmoses/Tapir-Compiler-RT"
     end
 
     resource "libcxx" do
       url "https://llvm.org/git/libcxx.git", :branch => "release_50"
     end
-
+    
     resource "libunwind" do
       url "https://llvm.org/git/libunwind.git", :branch => "release_50"
     end
-
+    
     resource "lld" do
       url "https://llvm.org/git/lld.git", :branch => "release_50"
     end
 
     resource "lldb" do
       url "https://llvm.org/git/lldb.git", :branch => "release_50"
+    end
+    
+    resource "clang-extra-tools" do
+      url "https://llvm.org/git/clang-tools-extra.git", :branch => "release_50"
+    end
+
+    resource "openmp" do
+      url "https://git.llvm.org/git/openmp.git", :branch => "release_50"
+    end
+
+    resource "polly" do
+        url "https://github.com/wsmoses/Tapir-Polly.git"
     end
   end
   
