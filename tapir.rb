@@ -67,8 +67,10 @@ class Tapir < Formula
     #(buildpath/"projects/openmp").install resource("openmp")
     (buildpath/"projects/libcxx").install resource("libcxx")
     (buildpath/"projects/libunwind").install resource("libunwind")
-    (buildpath/"tools/lld").install resource("lld")
-    (buildpath/"tools/lldb").install resource("lldb")
+
+    #(buildpath/"tools/lld").install resource("lld")
+    #(buildpath/"tools/lldb").install resource("lldb")
+    #
     #(buildpath/"tools/polly").install resource("polly")
     #(buildpath/"projects/compiler-rt").install resource("compiler-rt")
 
