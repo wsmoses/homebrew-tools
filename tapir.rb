@@ -6,11 +6,11 @@ class Tapir < Formula
     url "http://github.com/wsmoses/Tapir-LLVM.git"
 
     resource "clang" do
-      url "https://github.com/wsmoses/Tapir-Clang"
+      url "https://github.com/wsmoses/Tapir-Clang.git"
     end
     
     resource "compiler-rt" do
-      url "https://github.com/wsmoses/Tapir-Compiler-RT"
+      url "https://github.com/wsmoses/Tapir-Compiler-RT.git"
     end
 
     resource "libcxx" do
@@ -34,11 +34,11 @@ class Tapir < Formula
     end
 
     resource "openmp" do
-      url "https://git.llvm.org/git/openmp.git", :branch => "release_50"
+      url "https://llvm.org/git/openmp.git", :branch => "release_50"
     end
 
     resource "polly" do
-        url "https://github.com/wsmoses/Tapir-Polly.git"
+      url "https://github.com/wsmoses/Tapir-Polly.git"
     end
   end
   
