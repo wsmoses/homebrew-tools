@@ -64,7 +64,7 @@ class Tapir < Formula
 
     #(buildpath/"tools/clang").install resource("clang")
     (buildpath/"tools/clang/tools/extra").install resource("clang-extra-tools")
-    (buildpath/"projects/openmp").install resource("openmp")
+    #(buildpath/"projects/openmp").install resource("openmp")
     (buildpath/"projects/libcxx").install resource("libcxx")
     (buildpath/"projects/libunwind").install resource("libunwind")
     (buildpath/"tools/lld").install resource("lld")
