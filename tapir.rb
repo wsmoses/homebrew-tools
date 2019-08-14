@@ -62,15 +62,15 @@ class Tapir < Formula
     # Apple's libstdc++ is too old to build LLVM
     ENV.libcxx if ENV.compiler == :clang
 
-    (buildpath/"tools/clang").install resource("clang")
+    #(buildpath/"tools/clang").install resource("clang")
     (buildpath/"tools/clang/tools/extra").install resource("clang-extra-tools")
     (buildpath/"projects/openmp").install resource("openmp")
     (buildpath/"projects/libcxx").install resource("libcxx")
     (buildpath/"projects/libunwind").install resource("libunwind")
     (buildpath/"tools/lld").install resource("lld")
     (buildpath/"tools/lldb").install resource("lldb")
-    (buildpath/"tools/polly").install resource("polly")
-    (buildpath/"projects/compiler-rt").install resource("compiler-rt")
+    #(buildpath/"tools/polly").install resource("polly")
+    #(buildpath/"projects/compiler-rt").install resource("compiler-rt")
 
     # compiler-rt has some iOS simulator features that require i386 symbols
     # I'm assuming the rest of clang needs support too for 32-bit compilation
