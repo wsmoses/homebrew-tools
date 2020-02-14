@@ -5,7 +5,7 @@ class Cilkrts < Formula
 
   stable do
     url "http://cilk.mit.edu/cilkrts.tgz"
-    sha256 "d4341b0ae9c955cc680d41d5ac2fd02131169726d8aa9fee6ce2368811a79b9c"
+    sha256 "7b2ff7b57e621567765fb6a9dada820f7fffff99a5958ae286bd1c7ac37ac732"
   end
 
   head do
@@ -33,10 +33,8 @@ class Cilkrts < Formula
 
     args = %W[
       -DCMAKE_INSTALL_PREFIX=#{install_prefix}
-      -DCMAKE_C_COMPILER=/usr/local/opt/tapir/bin/clang-5.0
-      -DCMAKE_CXX_COMPILER=/usr/local/opt/tapir/bin/clang++-5.0
-      -DCMAKE_CXX_FLAGS="-I/usr/local/opt/tapir/lib/llvm-5.0/include/c++/v1"
-      -DCMAKE_LD_FLAGS="-L/usr/local/opt/tapir/lib/llvm-5.0/lib"
+      -DCMAKE_C_COMPILER=/usr/local/opt/tapir/bin/clang
+      -DCMAKE_CXX_COMPILER=/usr/local/opt/tapir/bin/clang++
     ]
 
     mktemp do
