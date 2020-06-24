@@ -2,7 +2,7 @@ class Cloud < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
   revision 3
-  head "git@github.com:wsmoses/cloudclang.git"
+  head "git@github.com:wsmoses/cloudclang.git", :using => :git
 
   # Clang cannot find system headers if Xcode CLT is not installed
   pour_bottle? do
