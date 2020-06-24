@@ -30,7 +30,6 @@ class Cloud < Formula
       clang
       clang-tools-extra
       lld
-      lldb
       openmp
       polly
     ]
