@@ -1,4 +1,4 @@
-class Llvm < Formula
+class Cloud < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
   revision 3
