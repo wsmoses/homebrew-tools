@@ -17,7 +17,7 @@ class Enzyme < Formula
     ]
 
     mktemp do
-      system "cmake", buildpath+"/enzyme", *(std_cmake_args + args)
+      system "cmake", buildpath/"enzyme", *(std_cmake_args + args)
       system "cmake", "--build", "."
       system "cmake", "--build", ".", "--target", "install"
     end
